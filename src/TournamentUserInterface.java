@@ -13,9 +13,11 @@ import java.util.Scanner;
 public class TournamentUserInterface {
 
         Scanner reader = new Scanner(System.in);
+        private Tournament tournament;
 
-        public void start() {
+        public void start(Tournament tournament) {
 
+            this.tournament = tournament;
             System.out.println("Kumpula ski jumping week");
             System.out.println();
             enterParticipants();
@@ -31,7 +33,7 @@ public class TournamentUserInterface {
                 String input = getParticipant();
 
                 if (!input.equals("")) {
-                    // add participant
+                    tournament.addParticipant(new Jumper(input));
                 } else {
                     System.out.println("The tournament begins!");
                     break;
