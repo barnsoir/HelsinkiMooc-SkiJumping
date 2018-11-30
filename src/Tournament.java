@@ -22,4 +22,9 @@ public class Tournament {
     public void addParticipant(Jumper jumper) {
         this.jumpers.add(jumper);
     }
+
+    public ArrayList<Jumper> standings () {
+        Collections.sort(this.jumpers);
+        return this.jumpers;
+    }
 }

@@ -51,7 +51,9 @@ public class TournamentUserInterface {
                 String input = getRound();
 
                 if (input.equals("jump")) {
-                    // new round
+                    Round round = new Round(tournament);
+                    round.printStandings();
+                    round.runRound();
                 } else {
                     System.out.println("Thanks!");
                     break;

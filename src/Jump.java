@@ -21,15 +21,20 @@ public class Jump {
         }
     }
 
+    public int calculateScore() {
+        // need to add 3 middle votes
+        return this.length;
+    }
+
     public void printJump() {
         System.out.println("    length: " + this.length);
-        System.out.println("    judge votes: [");
+        System.out.print("    judge votes: [");
         for (int j=0; j<votes.size(); j++) {
             System.out.print(votes.get(j));
             if (j<(votes.size()-1)) {
                 System.out.print(",");
             }
         }
-        System.out.print("]");
+        System.out.println("]");
     }
 }

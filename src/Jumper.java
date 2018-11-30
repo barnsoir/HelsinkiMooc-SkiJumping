@@ -17,7 +17,11 @@ public class Jumper implements Comparable<Jumper> {
         this.name = name;
         this.score = 0;
     }
-    
+
+    public String getName () {
+        return this.name;
+    }
+
     public int getScore () {
         return this.score;
     }
