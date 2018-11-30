@@ -13,7 +13,8 @@ import java.util.*;
 public class Tournament {
     
     private ArrayList<Jumper> jumpers;
-    
+    private Tournament tournament;
+
     public Tournament() {
        this.jumpers = new ArrayList<Jumper>();
     }
