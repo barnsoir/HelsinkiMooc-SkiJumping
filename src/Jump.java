@@ -23,7 +23,12 @@ public class Jump {
 
     public int calculateScore() {
         // need to add 3 middle votes
-        return this.length;
+        int voteTotal = this.length;
+        Collections.sort(votes);
+        for (int j=1; j<votes.size()-1; j++) {
+            voteTotal += votes.get(j);
+        }
+        return voteTotal;
     }
 
     public void printJump() {

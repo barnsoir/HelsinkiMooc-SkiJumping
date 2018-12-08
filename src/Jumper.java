@@ -26,10 +26,14 @@ public class Jumper implements Comparable<Jumper> {
         return this.score;
     }
     
-    public void addRoundScore (int roundScore) {
+/*    public void addRoundScore (int roundScore) {
         this.score += roundScore;
+    } */
+
+    public void setScore(int score) {
+        this.score = score;
     }
-    
+
     public int compareTo(Jumper jumper) {
         if (this.score == jumper.getScore()) {
             return 0;

@@ -30,7 +30,7 @@ public class Round {
             System.out.println("  " + jumper.getName());
             Jump jump = new Jump();
             jump.printJump();
-            jumper.addRoundScore(jump.calculateScore());
+            jumper.setScore(jumper.getScore() + jump.calculateScore());
         }
         System.out.println();
     }
