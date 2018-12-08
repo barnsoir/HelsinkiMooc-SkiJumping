@@ -5,11 +5,13 @@ public class Round {
     private ArrayList<Jump> jumps;
     private Tournament tournamentStanding;
     private ArrayList<Jumper> standings;
+    private int roundNumber;
 
-    public Round(Tournament tournament) {
+    public Round(Tournament tournament, int roundNumber) {
         this.jumps = new ArrayList<Jump>();
         this.tournamentStanding = tournament;
         this.standings = tournamentStanding.standings();
+        this.roundNumber = roundNumber;
     }
 
     public void printStandings() {
@@ -22,7 +24,7 @@ public class Round {
     }
 
     public void runRound() {
-        System.out.println("Results of round ");
+        System.out.println("Results of round " + roundNumber);
         for (int j=0; j<this.standings.size(); j++) {
             Jumper jumper = this.standings.get(j);
             System.out.println("  " + jumper.getName());

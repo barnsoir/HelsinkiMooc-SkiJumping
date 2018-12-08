@@ -14,9 +14,11 @@ public class Tournament {
     
     private ArrayList<Jumper> jumpers;
     private Tournament tournament;
+    private int rounds;
 
     public Tournament() {
        this.jumpers = new ArrayList<Jumper>();
+       this.rounds = 0;
     }
     
     public void addParticipant(Jumper jumper) {
@@ -26,5 +28,13 @@ public class Tournament {
     public ArrayList<Jumper> standings () {
         Collections.sort(this.jumpers);
         return this.jumpers;
+    }
+
+    public int getRounds() {
+        return rounds;
+    }
+
+    public void setRounds(int rounds) {
+        this.rounds = rounds;
     }
 }
