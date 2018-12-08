@@ -11,6 +11,10 @@ public class Jump {
         generateVotes(5, votes);
     }
 
+    public int getLength() {
+        return length;
+    }
+
     public int generateLength() {
         return (int)(60 + Math.random()*60);
     }

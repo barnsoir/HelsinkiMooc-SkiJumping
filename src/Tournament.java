@@ -13,12 +13,14 @@ import java.util.*;
 public class Tournament {
     
     private ArrayList<Jumper> jumpers;
+    private Map<Integer, Round> rounds;
     private Tournament tournament;
-    private int rounds;
+    private int roundNo;
 
     public Tournament() {
        this.jumpers = new ArrayList<Jumper>();
-       this.rounds = 0;
+       this.roundNo = 0;
+       this.rounds = new HashMap<Integer, Round>();
     }
     
     public void addParticipant(Jumper jumper) {
@@ -31,10 +33,24 @@ public class Tournament {
     }
 
     public int getRounds() {
-        return rounds;
+        return roundNo;
     }
 
-    public void setRounds(int rounds) {
-        this.rounds = rounds;
+    public void setRounds(int roundNo) {
+        this.roundNo = roundNo;
+    }
+
+    public void addRound(int roundNo, Round round) {
+        this.rounds.put(roundNo, round);
+    }
+
+    public void printJumps(String jumper) {
+        for (int i = 1; i <this.roundNo+1; i++) {
+            System.out.print(this.rounds.get(i).getNamedJump(jumper) + " m");
+            if (i<this.roundNo) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
     }
 }

@@ -8,7 +8,7 @@
  *
  * @author barne
  */
-import java.util.Scanner;
+import java.util.*;
 
 public class TournamentUserInterface {
 
@@ -55,8 +55,10 @@ public class TournamentUserInterface {
                     Round round = new Round(tournament, tournament.getRounds());
                     round.printStandings();
                     round.runRound();
+                    tournament.addRound(round.getRoundNumber(), round);
                 } else {
                     System.out.println("Thanks!");
+                    System.out.println();
                     break;
                 }
             }
@@ -70,5 +72,16 @@ public class TournamentUserInterface {
 
         public void displayResults() {
             System.out.println("Tournament results:");
+            System.out.println("Position    Name");
+            ArrayList<Jumper> standings = tournament.standings();
+            Collections.reverse(standings);
+            for (int i=0; i<standings.size(); i++) {
+                Jumper jumper = standings.get(i);
+                System.out.println((i+1) + "           " + jumper.getName() + " (" + jumper.getScore() + " points)");
+                System.out.print("            Jump lengths: ");
+                tournament.printJumps(jumper.getName());
+            }
+
+
         }
 }

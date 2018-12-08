@@ -2,13 +2,13 @@ import java.util.*;
 
 public class Round {
 
-    private ArrayList<Jump> jumps;
+    private Map<String, Jump> jumps;
     private Tournament tournamentStanding;
     private ArrayList<Jumper> standings;
     private int roundNumber;
 
     public Round(Tournament tournament, int roundNumber) {
-        this.jumps = new ArrayList<Jump>();
+        this.jumps = new HashMap<String, Jump>();
         this.tournamentStanding = tournament;
         this.standings = tournamentStanding.standings();
         this.roundNumber = roundNumber;
@@ -31,8 +31,16 @@ public class Round {
             Jump jump = new Jump();
             jump.printJump();
             jumper.setScore(jumper.getScore() + jump.calculateScore());
+            jumps.put(jumper.getName(), jump);
         }
         System.out.println();
     }
 
+    public int getRoundNumber() {
+        return roundNumber;
+    }
+
+    public int getNamedJump(String jumper) {
+        return this.jumps.get(jumper).getLength();
+    }
 }
